@@ -56,6 +56,7 @@ s = ":toggle soft-wrap.enable"
 
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+"F6" = "@:sh pandoc --resource-path <C-r>%<C-w> --standalone --metadata title='Preview' <C-r>% -o /tmp/md-preview.html && xdg-open /tmp/md-preview.html<ret>"
 
 
 
