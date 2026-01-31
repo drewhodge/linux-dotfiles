@@ -101,6 +101,10 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# fzf configuration
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
