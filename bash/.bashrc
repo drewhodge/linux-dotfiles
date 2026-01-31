@@ -17,3 +17,6 @@ ssh-add ~/.ssh/id_ed25519
 # Use bat to read manpages.
 export MANPAGER="nvim +Man!"
 
+
+# Created by `pipx` on 2026-01-12 20:16:13
+export PATH="$PATH:/home/drew/.local/bin"
