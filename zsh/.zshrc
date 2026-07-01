@@ -26,11 +26,13 @@ ssh-add ~/.ssh/id_ed25519
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="af-magic"
+# ZSH_THEME="af-magic"
 # ZSH_THEME="bira"
 # ZSH_THEME="darkblood"
 # ZSH_THEME="jonathan"
-# ZSH_THEME="jnrowe"
+# ZSH_THEME="jnrowe"i
+# ZSH_THEME="re5et"
+ZSH_THEME="juanghurtado"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -106,6 +108,13 @@ source $ZSH/oh-my-zsh.sh
 source <(fzf --zsh)
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# Ruby gem configuration
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"
+
+# Location of Rudt binaries installed/built using cargo
+export PATH="$PATH:/home/drew/.cargo/bin" 
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
