@@ -18,8 +18,8 @@ compinit
 # End of lines added by compinstall
 
 # Start the ssh-agent and add ssh.
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+#eval "$(ssh-agent -s)"
+#ssh-add ~/.ssh/id_ed25519
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -103,6 +103,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Load SSH key automatically using 'keychain'.
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 # fzf configuration
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -115,6 +118,9 @@ export PATH="$PATH:$GEM_HOME/bin"
 
 # Location of Rudt binaries installed/built using cargo
 export PATH="$PATH:/home/drew/.cargo/bin" 
+
+# Add go/bin directory to $PATH
+export PATH="$PATH:/home/drew/go/bin"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
