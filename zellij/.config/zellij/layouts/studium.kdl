@@ -1,0 +1,35 @@
+layout {
+  // Top status line for tabs and global workspace info.
+  pane size=1 borderless=true {
+    plugin location="zellij:tab-bar"
+  }
+
+  // Main workspace body split.
+  pane split_direction="vertical" {
+    // Left column: editor area (60% screen width).
+    pane size="60%" name="Text editor" focus=true {
+      command "hx"
+      // args "."
+    }
+
+    // Right column: Markdown viewer and version control (40% screen width).
+    pane size="40%" split_direction="horizontal" {
+      // Upper right pane: Markdown viewer.
+      pane name="Markdown viewer" {
+        command "treemd"
+      }
+      // Lower right pane: version control.
+      pane name="Version control" {
+        command "lazygit"
+      }
+    }
+  }
+
+  // Bottom status bar--displays keyboard shortcut hints.
+  pane size=1 borderless=true {
+    plugin location="zellij:status-bar"
+  }
+
+}
+
+

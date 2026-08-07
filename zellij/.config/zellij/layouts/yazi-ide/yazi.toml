@@ -1,0 +1,26 @@
+# ==============================================================================
+# YAZI CONFIGURATION
+# Optimized for a integrated Zellij + Helix IDE Workspace
+# ==============================================================================
+
+[mgr]
+ratio          = [ 0, 4, 4 ]
+sort_by        = "alphabetical"
+sort_sensitive = false
+sort_reverse   = false
+sort_dir_first = true
+show_hidden    = false
+show_symlink   = true
+
+[opener]
+edit = [
+    { run = 'zellij action focus-next-pane && zellij action write-chars ":open $1" && zellij action write-chars', block = true, desc = "Inject into Helix" }
+]
+
+[open]
+rules = [
+    { url = "*", use = "edit" }
+]
+
+[log]
+enabled = false
