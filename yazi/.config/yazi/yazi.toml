@@ -2,4 +2,5 @@
 
 prepend_spotters = [
     { url = "*", run = "notes" },
+    { url = "*/", run = "notes" },
 ]
