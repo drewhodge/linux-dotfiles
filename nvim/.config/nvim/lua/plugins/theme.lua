@@ -1,1 +1,1 @@
-/home/drew/.config/omarchy/current/theme/neovim.lua
+/home/drew/.local/state/omarchy/current/theme/neovim.lua

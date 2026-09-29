@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on   = [ ",", "n" ]
+run  = "plugin notes -- edit"
+desc = "Edit note for hovered file"

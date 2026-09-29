@@ -1,0 +1,5 @@
+[plugin]
+
+prepend_spotters = [
+    { url = "*", run = "notes" },
+]
