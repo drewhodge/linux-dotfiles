@@ -1,3 +1,19 @@
+# 1. Define the markdownlint Language Server configuration
+[language-server.efm]
+command = "efm-langserver"
+args = ["-c", "/home/drew/.config/efm-langserver/config.yaml"]
+root-indicators = [".git", ".markdownlint.json", ".markdownlintrc", "config.yaml"]
+
+[language-server.vale-ls]
+command = "vale-ls"
+
+[language-server.ltex-ls-plus.config]
+ltex.diagnosticSeverity = "warning"
+ltex.ltex-ls.logLevel = "warning"
+ltex.disabledRules = { "en-US" = ["PROFANITY"], "en-GB" = ["PROFANITY"] }
+ltex.dictionary = { "en-US" = ["builtin"], "en-GB" = ["builtin"] }
+
+# 2. Define the YAML configuration
 [language-server.yaml-language-server.config.yaml]
 format = { enable = true }
 validation = true
@@ -6,33 +22,10 @@ validation = true
 "https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
 "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "roles/{tasks,handlers}/*.{yml,yaml}"
 
+# 3. Configure the Markdown Language settings
 [[language]]
 name = "markdown"
-language-servers = ["marksman", "ltex-ls-plus", "markdown-oxide"]
-soft-wrap.enable = true
-# text-width = 80 < this is the default value.
-soft-wrap.wrap-at-text-width = true
-# formatter = { command = "dprint", args = ["fmt", "--stdin", "md", "--config", "~/.dprint.json"]}
-formatter = { command = "prettier", args = [
-  "--parser",
-  "markdown",
-  "--prose-wrap",
-  "never", # <always|never|preserve>
-]}
-
-[language-server.ltex-ls-plus.config]
-ltex.diagnosticSeverity = "warning"
-ltex.ltex-ls.logLevel = "warning"
-ltex.disabledRules = { "en-US" = ["PROFANITY"], "en-GB" = ["PROFANITY"] }
-ltex.dictionary = { "en-US" = ["builtin"], "en-GB" = ["builtin"] }
-
-[[language]]
-name = "latex"
-formatter = {command = "prettier", args = [
-  "--parser",
-  "latex",
-  "--prose-wrap",
-  "never", # <always|never|preserve?
-]}
-
-
+# language-servers = ["marksman", "vale-ls", { name = "efm", only-features = [ "diagnostics" ] }]
+language-servers = ["marksman", "ltex-ls-plus"]
+soft-wrap = { enable = true }
+formatter = { command = "prettier", args = ["--parser", "markdown", "--prose-wrap", "never"] }
