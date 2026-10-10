@@ -2,3 +2,8 @@
 on   = [ ",", "n" ]
 run  = "plugin notes -- edit"
 desc = "Edit note for hovered file"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "i" ]
+run  = "plugin lazygit"
+desc = "run lazygit"

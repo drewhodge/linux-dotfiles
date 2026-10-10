@@ -146,3 +146,5 @@ export PATH="$PATH:/home/drew/go/bin"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+source /home/drew/.config/broot/launcher/bash/br

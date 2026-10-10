@@ -29,3 +29,21 @@ name = "markdown"
 language-servers = ["marksman", "ltex-ls-plus"]
 soft-wrap = { enable = true }
 formatter = { command = "prettier", args = ["--parser", "markdown", "--prose-wrap", "never"] }
+
+# Configuration for LaTeX compilation and preview.
+[[language]]
+name = "latex"
+scope = "source.tex"
+injection-regex = "tex"
+file-types = ["tex", "cls", "sty"]
+roots = [".git", "main.tex"]
+language-servers = [ "texlab" ]
+
+[language-server.texlab.config.texlab]
+# Automatically compile your PDF using latexmk when you save the file
+build.onSave = true
+
+# Define how texlab sends forward search commands to your PDF viewer
+forwardSearch.executable = "zathura"
+forwardSearch.args = ["--synctex-forward", "%l:1:%f", "%p"]
+

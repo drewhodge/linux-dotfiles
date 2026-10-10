@@ -1,16 +1,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """
-$username\
-$hostname\
-$directory\
-$git_branch\
-$git_state\
-$git_status\
-$cmd_duration\
-$line_break\
-$python\
-$character"""
+  # custom format
+  format = """
+  [╭─ $shell─────────────── $memory_usage ──╌╌ $nodejs $python $fill ╌╌─╮](bold overlay0)
+  [├╌](bold overlay0)$sudo$username$hostname$localip$directory$read_only$git_branch$git_metrics [$fill $cmd_duration ┘](bold overlay0)
+  [╰─ $battery $character](bold overlay0) """
 
 [directory]
 style = "bold yellow"

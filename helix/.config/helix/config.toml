@@ -65,6 +65,9 @@ wrap-at-text-width = true
 [keys.normal.space.t]
 s = ":toggle soft-wrap.enable"
 
+[keys.normal]
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+
 
 
 

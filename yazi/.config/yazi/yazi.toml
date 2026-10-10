@@ -4,3 +4,17 @@ prepend_spotters = [
     { url = "*", run = "notes" },
     { url = "*/", run = "notes" },
 ]
+
+# Registering git fetchers
+# Correct schema for your version of Yazi
+prepend_fetchers = [
+    { url = "*", run = "git", group = "git" },
+    { url = "*/", run = "git", group = "git" },
+]
+
+[manager]
+linemode = "git"
+
+
+
+
