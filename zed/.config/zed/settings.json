@@ -1,0 +1,55 @@
+{
+  "helix_mode": true,
+  "soft_wrap": "prefer_line",
+  "tabs": {
+    "file_icons": false,
+    "git_status": true
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_status_icon": false
+  },
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "format_on_save": "off",
+  "git_panel": {
+    "tree_view": true
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "buffer_font_size": 12.0,
+  "buffer_font_family": "JetBrains Mono",
+  "terminal": { "font_size": 10.0 },
+  "relative_line_numbers": "enabled",
+  "session": { "trust_all_worktrees": true },
+  "vim_mode": false,
+  "base_keymap": "Emacs",
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Light Hard",
+    "dark": "Gruvbox Dark Hard"
+  },
+  "disable_ai": true,
+  "languages": {
+    "LaTeX": {
+      "language_servers": [
+        "texlab"
+      ]
+    }
+  },
+  "lsp": {
+    "texlab": {
+      "initialization_options": {
+        "build": {
+          "onSave": true
+        },
+        "forwardSearch": {
+          "executable": "evince",
+          "args": [
+            "%p"
+          ]
+        }
+      }
+    }
+  }
+}
